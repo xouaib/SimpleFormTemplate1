@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Bootstrap required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap required meta tags -->
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Template Using Bootstrap 4</title>
+
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- jQuery Library -->
+
+    <!-- Bootstrap StyleSheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap StyleSheet -->
+
+    <!-- External ressources -->
+    <link rel="stylesheet" href="stylesheet/global.css">
+    <!-- External ressources -->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/png"
+        href="https://www.seoclerk.com/pics/643219-1IdkTg1543520708.png" />
+    <!-- Favicon -->
+
+    <!-- Awesome font -->
+    <link rel="stylesheet" href="stylesheet/awesomefont/all.css">
+    <script src="javascript/awesomefont/all.js"></script>
+    <!-- Awesome font -->
+    <style>
+        body {
+            padding-top: 5rem;
+        }
+
+        #mainnavbar {
+            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, .1);
+        }
+
+        #buttonDelete,
+        #buttonAdd {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-light bg-light fixed-top" id="mainnavbar">
+                <div>
+                    <a class="navbar-brand font-weight-bold" href="#" style="color: #383c4a">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        Home
+                    </a>
+                </div>
+                <div>
+                    <form class="form-inline">
+                        <input class="form-control form-control-sm" type="text" placeholder="Full name">
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex align-items-center font-weight-bold active">
+                        <i class="fas fa-stream"></i>
+                        &nbsp;
+                        Room list
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-chevron-circle-right"></i>
+                        &nbsp;
+                        Room 1
+                        &nbsp;
+                        <span class="badge badge-primary badge-pill">14</span>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-chevron-circle-right"></i>
+                        &nbsp;
+                        Room 2
+                        &nbsp;
+                        <span class="badge badge-primary badge-pill">1</span>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-chevron-circle-right"></i>
+                        &nbsp;
+                        Room ...
+                        &nbsp;
+                        <span class="badge badge-primary badge-pill">10</span>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-chevron-circle-right"></i>
+                        &nbsp;
+                        Room X+
+                        &nbsp;
+                        <span class="badge badge-primary badge-pill">XY</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-7">
+                <main>
+                    <div class="row border-bottom">
+                        <h1 class="h3" style="color: #383c4a"><i class="fas fa-info-circle"></i> Room detail:</h1>
+                    </div>
+                    <br>
+                    <div class="row rounded border p-4">
+                        <div class="col-md-8">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <label for="roomLabel"><b> Room name</b></label>
+                                        <input type="text" class="form-control" id="roomName" required>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <label for="contentMsg"><b>Content (<em>MSG</em>)</b></label>
+                                        <textarea class="form-control" id="contentMsgControlTextarea" rows="6"
+                                            required></textarea>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-10" style="text-align: right">
+                                        <button type="button" class="btn btn-danger" id="buttonDelete"
+                                            data-toggle="modal" data-target="#deleteRoomModal">
+                                            <i class="fas fa-trash-alt"></i>&nbsp;Delete room
+                                        </button>
+                                        <button type="submit" class="btn btn-success" id="buttonAdd">
+                                            <i class="fas fa-plus"></i>&nbsp;New room
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div class="col-md-3">
+                <div class="rounded border p-3">
+                    <form>
+                        <div class="form-group">
+                            <label for="fullName"><small><b>Full name</b></small></label>
+                            <input type="text" class="form-control form-control-sm w-75">
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsApp"><small><b>WhatsApp</b></small></label>
+                            <input type="tel" class="form-control form-control-sm w-75" placeholder="+212 6 xx xx xx xx">
+                        </div>
+                        <div class="form-group">
+                            <label for="birthDay"><small><b>Birthday</b></small></label>
+                            <input type="date" class="form-control form-control-sm w-75">
+                        </div>
+                        <div class="form-group">
+                            <label for="pseudo"><small><b>Pseudo</b></small></label>
+                            <input type="text" class="form-control form-control-sm w-50">
+                        </div>
+                        <div class="form-group">
+                            <label for="position"><small><b>Position</b></small></label>
+                            <input type="text" class="form-control form-control-sm">
+                        </div>
+                        <div class="form-group">
+                            <label for="street"><small><b>Street</b></small></label>
+                            <input type="text" class="form-control form-control-sm">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="deleteRoomModal" tabindex="-1" role="dialog" aria-labelledby="deleteRoomModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteRoomModalLabel">Delete room confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete the room, with ID: <a href="#" class="alert-link"><b>XXXX</b></a> ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger">Confirm delete</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+
+    <!-- Script -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Script -->
+</body>
+</body>
+
+</html>
